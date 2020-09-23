@@ -7,6 +7,7 @@ class Genre
   def initialize(name)
     @name = name 
     @@all << self 
+  end
   
   def self.all 
     @@all 
@@ -21,3 +22,4 @@ class Genre
       song.artist 
     end
   end 
+end 
