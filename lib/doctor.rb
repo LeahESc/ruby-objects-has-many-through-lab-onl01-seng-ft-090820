@@ -6,6 +6,7 @@ class Doctor
   def initialize(name)
     @name = name 
     @@all << self
+  end
   
   def self.all 
     @@all 
@@ -19,6 +20,12 @@ class Doctor
   
   def appointments
     Appointment.all.select {|appt| appt.doctor == self}
+  end
+  
+  def patients
+    self.appointments.map do |appt|
+      appt.patient
+    end
   end
   
 end 
